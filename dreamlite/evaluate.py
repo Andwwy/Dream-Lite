@@ -1,4 +1,4 @@
-"""Accuracy on MATH dev, MATH-500 and GSM8K with vLLM.
+"""Accuracy on MATH dev, MATH-500, the full MATH test set (mathtest) and GSM8K with vLLM.
 
   python -m dreamlite.evaluate --model Qwen/Qwen3-1.7B-Base --tag b0 --sets math500,gsm8k
   python -m dreamlite.evaluate --model Qwen/Qwen3-1.7B-Base --tag b1 --sets math500,gsm8k --k 8
@@ -36,8 +36,8 @@ def main():
 
     for name in a.sets.split(","):
         t0 = time.time()
-        if name in ("dev", "math500"):
-            rows = dev if name == "dev" else data.math500()
+        if name in ("dev", "math500", "mathtest"):
+            rows = dev if name == "dev" else data.math500() if name == "math500" else data.math_test()
             stop = data.MATH_STOP + (["I hope it is correct"] if a.style == "minerva" else [])
             texts, st = generate(llm, [data.math_prompt(prefix, r["problem"]) for r in rows],
                                  max_tokens=a.max_tokens, stop=stop, **sampling)

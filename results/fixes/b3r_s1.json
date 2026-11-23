@@ -1,0 +1,59 @@
+{
+  "train": {
+    "steps": 745,
+    "train_tokens": 2117343,
+    "epoch_tokens": 577248,
+    "examples": 3581,
+    "epochs_done": 3.67,
+    "seconds": 195.8,
+    "tokens_per_s": 10812,
+    "loss_first": 0.2971,
+    "loss_last": NaN,
+    "lr": 0.0001,
+    "batch_tokens": 3000,
+    "trainable_params": 17432576,
+    "peak_gpu_gb": 16.4,
+    "seed": 1,
+    "rank": 16,
+    "alpha": 32,
+    "data": "/workspace/runs/baselines/b3/b3_s1.kept.jsonl",
+    "replay_examples": 693,
+    "total_seconds": 196.7
+  },
+  "math500": {
+    "accuracy": 38.4,
+    "n": 500,
+    "no_answer": 22,
+    "k": 1,
+    "style": "boxed",
+    "model": "/root/merged/b3r_s1",
+    "total_seconds": 17.3,
+    "seconds": 13.9,
+    "sequences": 500,
+    "output_tokens": 91512,
+    "output_tokens_per_s": 6565,
+    "mean_output_tokens": 183.0,
+    "hit_max_tokens": 0.038
+  },
+  "gsm8k": {
+    "accuracy": 75.44,
+    "n": 1319,
+    "no_answer": 0,
+    "k": 1,
+    "style": "boxed",
+    "model": "/root/merged/b3r_s1",
+    "total_seconds": 28.9,
+    "seconds": 26.0,
+    "sequences": 1319,
+    "output_tokens": 183566,
+    "output_tokens_per_s": 7057,
+    "mean_output_tokens": 139.2,
+    "hit_max_tokens": 0.004
+  },
+  "mmlu": {
+    "accuracy": 62.9,
+    "n": 1000,
+    "model": "/root/merged/b3r_s1",
+    "total_seconds": 25.0
+  }
+}

@@ -41,10 +41,14 @@ def add_lora(model, rank=16, alpha=32):
     return wrapped
 
 
-def encode(tok, problem, solution, max_len=1024):
-    """Token ids and labels; the loss covers the solution and the end-of-text token only."""
-    q = tok(f"Problem:\n{problem}\n\nSolution:\n")["input_ids"]
-    s = tok(solution + tok.eos_token)["input_ids"]
+def encode(tok, pair, max_len=1024):
+    """Token ids and labels; the loss covers the solution and the end-of-text token only.
+
+    A pair is {problem, solution}; replay pairs carry their own {prompt, solution}.
+    """
+    prompt = pair.get("prompt") or f"Problem:\n{pair['problem']}\n\nSolution:\n"
+    q = tok(prompt)["input_ids"]
+    s = tok(pair["solution"] + tok.eos_token)["input_ids"]
     ids = (q + s)[:max_len]
     return ids, [-100] * min(len(q), len(ids)) + ids[len(q):]
 
@@ -76,7 +80,9 @@ def train(model, tok, wrapped, pairs, *, seed, lr=1e-4, batch_tokens=3000, warmu
     params = [p for l in wrapped.values() for p in (l.A, l.B)]
     opt = torch.optim.AdamW(params, lr=lr, weight_decay=0.0)
     head = model.get_output_embeddings()
-    data = [encode(tok, p["problem"], p["solution"]) for p in pairs]
+    data = [encode(tok, p) for p in pairs]
+    # A prompt that fills the whole window leaves no solution token to learn from.
+    data = [d for d in data if any(t != -100 for t in d[1][1:])]
     batches = make_batches(data, batch_tokens)
     epoch_tokens = sum(len(ids) for ids, _ in data)
     rng = random.Random(seed)

@@ -1,0 +1,23 @@
+{
+  "train": {
+    "steps": 762,
+    "train_tokens": 2115219,
+    "epoch_tokens": 199866,
+    "examples": 1188,
+    "epochs_done": 10.58,
+    "seconds": 200.3,
+    "tokens_per_s": 10560,
+    "loss_first": 0.3138,
+    "loss_last": 0.0277,
+    "lr": 0.0001,
+    "batch_tokens": 3000,
+    "trainable_params": 17432576,
+    "peak_gpu_gb": 15.4,
+    "seed": 0,
+    "rank": 16,
+    "alpha": 32,
+    "data": "/workspace/runs/dream/nights/dream_s0_n1.kept.jsonl",
+    "replay_examples": 0,
+    "total_seconds": 200.8
+  }
+}

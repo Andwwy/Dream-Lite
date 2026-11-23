@@ -8,6 +8,7 @@ The adapter goes to <out>/adapters/<tag>.pt (and <tag>.ep<N>.pt with --save_epoc
 """
 import argparse
 import json
+import random
 import time
 from pathlib import Path
 
@@ -26,6 +27,8 @@ def main():
     ap.add_argument("--epochs", type=int)
     ap.add_argument("--budget_tokens", type=int)
     ap.add_argument("--save_epochs", action="store_true")
+    ap.add_argument("--replay", help="jsonl of {prompt, solution} replay pairs")
+    ap.add_argument("--replay_frac", type=float, default=0.2, help="share of training tokens from replay")
     ap.add_argument("--rank", type=int, default=16)
     ap.add_argument("--lr", type=float, default=1e-4)
     ap.add_argument("--batch_tokens", type=int, default=3000)
@@ -39,6 +42,21 @@ def main():
 
     from transformers import AutoModelForCausalLM, AutoTokenizer
     tok = AutoTokenizer.from_pretrained(BASE)
+    n_replay = 0
+    if a.replay:
+        # add replay pairs until they make up replay_frac of the tokens in one pass
+        from .lora import encode
+        task_tokens = sum(len(encode(tok, p)[0]) for p in pairs)
+        want = a.replay_frac / (1 - a.replay_frac) * task_tokens
+        pool = [json.loads(l) for l in Path(a.replay).read_text().splitlines() if l]
+        random.Random(a.seed).shuffle(pool)
+        got = 0
+        for r in pool:
+            if got >= want:
+                break
+            pairs.append(r)
+            got += len(encode(tok, r)[0])
+            n_replay += 1
     model = AutoModelForCausalLM.from_pretrained(BASE, dtype=torch.bfloat16).cuda()
     wrapped = add_lora(model, a.rank, 2 * a.rank)
     adapters = Path(a.out) / "adapters"
@@ -52,7 +70,7 @@ def main():
     stats = train(model, tok, wrapped, pairs, seed=a.seed, lr=a.lr, batch_tokens=a.batch_tokens,
                   epochs=a.epochs, budget_tokens=a.budget_tokens, on_epoch=on_epoch)
     save_adapter(wrapped, adapters / f"{a.tag}.pt", a.rank, 2 * a.rank)
-    stats.update(seed=a.seed, rank=a.rank, alpha=2 * a.rank, data=a.data,
+    stats.update(seed=a.seed, rank=a.rank, alpha=2 * a.rank, data=a.data, replay_examples=n_replay,
                  total_seconds=round(time.time() - t0, 1))
     update_json(Path(a.out) / "results" / f"{a.tag}.json", train=stats)
     print(f"[{a.tag}] train: {json.dumps(stats)}", flush=True)

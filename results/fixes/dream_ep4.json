@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "accuracy": 45.0,
+    "n": 500,
+    "no_answer": 22,
+    "k": 1,
+    "style": "boxed",
+    "model": "/root/merged/dream_ep4",
+    "total_seconds": 16.3,
+    "seconds": 15.1,
+    "sequences": 500,
+    "output_tokens": 97668,
+    "output_tokens_per_s": 6479,
+    "mean_output_tokens": 195.3,
+    "hit_max_tokens": 0.04
+  }
+}

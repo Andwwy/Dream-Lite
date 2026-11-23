@@ -28,6 +28,17 @@ def math_train_dev():
             [r for i, r in enumerate(rows) if i in dev_idx])
 
 
+def math_test():
+    """The full MATH test set (5,000 problems), for comparison with reported scores."""
+    from datasets import load_dataset
+    rows = []
+    for s in SUBJECTS:
+        rows += list(load_dataset("EleutherAI/hendrycks_math", s, split="test"))
+    for r in rows:
+        r["answer"] = last_boxed(r["solution"])
+    return rows
+
+
 def math500():
     from datasets import load_dataset
     return list(load_dataset("HuggingFaceH4/MATH-500", split="test"))

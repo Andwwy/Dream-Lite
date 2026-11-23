@@ -6,3 +6,6 @@ __pycache__/
 results/baselines/outputs/
 results/baselines/b3/
 results/dream/outputs/
+results/fixes/outputs/
+results/fixes/replay.jsonl
+results/fixes/run.log

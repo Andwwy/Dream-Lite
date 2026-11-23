@@ -1,0 +1,23 @@
+{
+  "train": {
+    "steps": 742,
+    "train_tokens": 2116779,
+    "epoch_tokens": 468152,
+    "examples": 2934,
+    "epochs_done": 4.52,
+    "seconds": 196.5,
+    "tokens_per_s": 10770,
+    "loss_first": 0.2875,
+    "loss_last": 0.1159,
+    "lr": 0.0001,
+    "batch_tokens": 3000,
+    "trainable_params": 17432576,
+    "peak_gpu_gb": 15.7,
+    "seed": 0,
+    "rank": 16,
+    "alpha": 32,
+    "data": "/workspace/runs/baselines/b3/b3_s0.kept.jsonl",
+    "replay_examples": 0,
+    "total_seconds": 197.3
+  }
+}

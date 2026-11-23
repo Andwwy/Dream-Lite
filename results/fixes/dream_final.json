@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "accuracy": 39.2,
+    "n": 500,
+    "no_answer": 12,
+    "k": 1,
+    "style": "boxed",
+    "model": "/root/merged/dream_final",
+    "total_seconds": 16.1,
+    "seconds": 14.6,
+    "sequences": 500,
+    "output_tokens": 99016,
+    "output_tokens_per_s": 6761,
+    "mean_output_tokens": 198.0,
+    "hit_max_tokens": 0.02
+  }
+}

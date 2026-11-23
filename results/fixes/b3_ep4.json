@@ -1,0 +1,17 @@
+{
+  "dev": {
+    "accuracy": 43.4,
+    "n": 500,
+    "no_answer": 23,
+    "k": 1,
+    "style": "boxed",
+    "model": "/root/merged/b3_ep4",
+    "total_seconds": 15.6,
+    "seconds": 14.4,
+    "sequences": 500,
+    "output_tokens": 92923,
+    "output_tokens_per_s": 6446,
+    "mean_output_tokens": 185.8,
+    "hit_max_tokens": 0.034
+  }
+}
