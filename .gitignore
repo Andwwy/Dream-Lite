@@ -5,3 +5,4 @@ __pycache__/
 # per-example model outputs (large); kept on the RunPod volume and locally
 results/baselines/outputs/
 results/baselines/b3/
+results/dream/outputs/

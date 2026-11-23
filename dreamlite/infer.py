@@ -12,8 +12,12 @@ def load_llm(model, max_num_seqs=256):
                gpu_memory_utilization=0.90, max_num_seqs=max_num_seqs)
 
 
-def generate(llm, prompts, **sampling):
-    """Returns (list of lists of completion texts, stats dict)."""
+def generate(llm, prompts, with_finish=False, **sampling):
+    """Returns (list of lists of completion texts, stats dict).
+
+    with_finish=True returns (text, finish_reason) pairs instead of texts;
+    finish_reason is "length" when the completion ran into max_tokens.
+    """
     from vllm import SamplingParams
     t = time.time()
     outs = llm.generate(prompts, SamplingParams(**sampling))
@@ -23,6 +27,8 @@ def generate(llm, prompts, **sampling):
     stats = dict(seconds=round(dt, 1), sequences=len(comps), output_tokens=n_out,
                  output_tokens_per_s=round(n_out / dt), mean_output_tokens=round(n_out / len(comps), 1),
                  hit_max_tokens=round(sum(c.finish_reason == "length" for c in comps) / len(comps), 3))
+    if with_finish:
+        return [[(c.text, c.finish_reason) for c in o.outputs] for o in outs], stats
     return [[c.text for c in o.outputs] for o in outs], stats
 
 
