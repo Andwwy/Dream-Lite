@@ -1,0 +1,100 @@
+{
+  "gen_load": {
+    "seconds": 15.3
+  },
+  "imagine": {
+    "seconds": 31.7,
+    "sequences": 1300,
+    "output_tokens": 206313,
+    "prompt_tokens": 417328,
+    "output_tokens_per_s": 6512,
+    "mean_output_tokens": 158.7,
+    "hit_max_tokens": 0.398,
+    "prompts": 1300,
+    "valid_problems": 772
+  },
+  "rehearse": {
+    "seconds": 161.9,
+    "sequences": 6176,
+    "output_tokens": 1285855,
+    "prompt_tokens": 466449,
+    "output_tokens_per_s": 7941,
+    "mean_output_tokens": 208.2,
+    "hit_max_tokens": 0.035,
+    "problems": 772
+  },
+  "filter": {
+    "seconds": 16.8,
+    "problems": 772,
+    "kept_problems": 115,
+    "kept_pairs": 230,
+    "no_boxed_answer": 0.131,
+    "unanimous": 21,
+    "no_majority": 636,
+    "agreement_histogram": {
+      "0": 6,
+      "1": 221,
+      "2": 208,
+      "3": 139,
+      "4": 62,
+      "5": 44,
+      "6": 44,
+      "7": 27,
+      "8": 21
+    }
+  },
+  "gen_total": {
+    "seconds": 239.9
+  },
+  "train": {
+    "load_seconds": 29.7,
+    "seconds": 4.9,
+    "merge_save_seconds": 2.7,
+    "examples": 256,
+    "kept_pairs": 230,
+    "timing_only_topup": 26,
+    "steps": 13,
+    "tokens": 42952,
+    "tokens_per_s": 8783,
+    "examples_per_s": 52.3,
+    "loss_first": 0.393,
+    "loss_last": 0.3,
+    "lora_modules": 196,
+    "trainable_params": 17432576,
+    "rank": 16,
+    "lr": 0.0001,
+    "batch_tokens": 4000,
+    "peak_gpu_gb": 18.6,
+    "total_seconds": 40.3
+  },
+  "eval_base": {
+    "load_seconds": 16.6,
+    "score_seconds": 1.3,
+    "accuracy": 37.0,
+    "n": 500,
+    "no_boxed_answer": 57,
+    "total_seconds": 50.8,
+    "seconds": 16.5,
+    "sequences": 500,
+    "output_tokens": 109721,
+    "prompt_tokens": 306079,
+    "output_tokens_per_s": 6649,
+    "mean_output_tokens": 219.4,
+    "hit_max_tokens": 0.082
+  },
+  "eval_merged": {
+    "load_seconds": 35.6,
+    "score_seconds": 1.9,
+    "accuracy": 34.8,
+    "n": 500,
+    "no_boxed_answer": 46,
+    "total_seconds": 68.9,
+    "seconds": 15.3,
+    "sequences": 500,
+    "output_tokens": 92947,
+    "prompt_tokens": 306079,
+    "output_tokens_per_s": 6065,
+    "mean_output_tokens": 185.9,
+    "hit_max_tokens": 0.07
+  }
+}
