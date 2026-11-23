@@ -2,3 +2,6 @@
 # local source of the published tutorial artifact
 Literature & Technical/sleep_framework_guide.html
 __pycache__/
+# per-example model outputs (large); kept on the RunPod volume and locally
+results/baselines/outputs/
+results/baselines/b3/

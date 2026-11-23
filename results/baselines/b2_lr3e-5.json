@@ -1,0 +1,37 @@
+{
+  "train": {
+    "steps": 780,
+    "train_tokens": 2114887,
+    "epoch_tokens": 2114887,
+    "examples": 7000,
+    "epochs_done": 1.0,
+    "seconds": 195.3,
+    "tokens_per_s": 10826,
+    "loss_first": 0.5985,
+    "loss_last": 0.606,
+    "lr": 3e-05,
+    "batch_tokens": 3000,
+    "trainable_params": 17432576,
+    "peak_gpu_gb": 16.3,
+    "seed": 0,
+    "rank": 16,
+    "alpha": 32,
+    "data": "gold",
+    "total_seconds": 198.4
+  },
+  "dev": {
+    "accuracy": 44.2,
+    "n": 500,
+    "no_answer": 57,
+    "k": 1,
+    "style": "boxed",
+    "model": "/root/merged/x",
+    "total_seconds": 20.3,
+    "seconds": 18.6,
+    "sequences": 500,
+    "output_tokens": 131533,
+    "output_tokens_per_s": 7076,
+    "mean_output_tokens": 263.1,
+    "hit_max_tokens": 0.114
+  }
+}

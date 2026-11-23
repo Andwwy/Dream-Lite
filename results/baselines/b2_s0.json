@@ -1,0 +1,38 @@
+{
+  "math500": {
+    "accuracy": 35.8,
+    "n": 500,
+    "no_answer": 52,
+    "k": 1,
+    "style": "boxed",
+    "model": "/root/merged/b2_s0",
+    "total_seconds": 21.6,
+    "seconds": 17.3,
+    "sequences": 500,
+    "output_tokens": 125170,
+    "output_tokens_per_s": 7234,
+    "mean_output_tokens": 250.3,
+    "hit_max_tokens": 0.094
+  },
+  "gsm8k": {
+    "accuracy": 69.67,
+    "n": 1319,
+    "no_answer": 0,
+    "k": 1,
+    "style": "boxed",
+    "model": "/root/merged/b2_s0",
+    "total_seconds": 23.4,
+    "seconds": 20.3,
+    "sequences": 1319,
+    "output_tokens": 131692,
+    "output_tokens_per_s": 6477,
+    "mean_output_tokens": 99.8,
+    "hit_max_tokens": 0.011
+  },
+  "mmlu": {
+    "accuracy": 64.0,
+    "n": 1000,
+    "model": "/root/merged/b2_s0",
+    "total_seconds": 24.8
+  }
+}

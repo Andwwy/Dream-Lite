@@ -1,0 +1,58 @@
+{
+  "train": {
+    "steps": 780,
+    "train_tokens": 2114887,
+    "epoch_tokens": 2114887,
+    "examples": 7000,
+    "epochs_done": 1.0,
+    "seconds": 195.8,
+    "tokens_per_s": 10802,
+    "loss_first": 0.5958,
+    "loss_last": 0.5557,
+    "lr": 0.0001,
+    "batch_tokens": 3000,
+    "trainable_params": 17432576,
+    "peak_gpu_gb": 16.2,
+    "seed": 1,
+    "rank": 16,
+    "alpha": 32,
+    "data": "gold",
+    "total_seconds": 198.8
+  },
+  "math500": {
+    "accuracy": 34.8,
+    "n": 500,
+    "no_answer": 49,
+    "k": 1,
+    "style": "boxed",
+    "model": "/root/merged/b2_s1",
+    "total_seconds": 20.8,
+    "seconds": 16.6,
+    "sequences": 500,
+    "output_tokens": 115350,
+    "output_tokens_per_s": 6958,
+    "mean_output_tokens": 230.7,
+    "hit_max_tokens": 0.078
+  },
+  "gsm8k": {
+    "accuracy": 68.39,
+    "n": 1319,
+    "no_answer": 0,
+    "k": 1,
+    "style": "boxed",
+    "model": "/root/merged/b2_s1",
+    "total_seconds": 22.0,
+    "seconds": 19.0,
+    "sequences": 1319,
+    "output_tokens": 123707,
+    "output_tokens_per_s": 6514,
+    "mean_output_tokens": 93.8,
+    "hit_max_tokens": 0.009
+  },
+  "mmlu": {
+    "accuracy": 63.8,
+    "n": 1000,
+    "model": "/root/merged/b2_s1",
+    "total_seconds": 24.7
+  }
+}

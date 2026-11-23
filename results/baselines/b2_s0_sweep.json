@@ -1,0 +1,22 @@
+{
+  "train": {
+    "steps": 2340,
+    "train_tokens": 6344661,
+    "epoch_tokens": 2114887,
+    "examples": 7000,
+    "epochs_done": 3.0,
+    "seconds": 584.8,
+    "tokens_per_s": 10848,
+    "loss_first": 0.5842,
+    "loss_last": 0.4543,
+    "lr": 0.0001,
+    "batch_tokens": 3000,
+    "trainable_params": 17432576,
+    "peak_gpu_gb": 16.3,
+    "seed": 0,
+    "rank": 16,
+    "alpha": 32,
+    "data": "gold",
+    "total_seconds": 587.8
+  }
+}

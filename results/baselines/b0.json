@@ -1,0 +1,53 @@
+{
+  "dev": {
+    "accuracy": 45.2,
+    "n": 500,
+    "no_answer": 49,
+    "k": 1,
+    "style": "boxed",
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "total_seconds": 18.1,
+    "seconds": 16.1,
+    "sequences": 500,
+    "output_tokens": 107763,
+    "output_tokens_per_s": 6693,
+    "mean_output_tokens": 215.5,
+    "hit_max_tokens": 0.07
+  },
+  "math500": {
+    "accuracy": 35.4,
+    "n": 500,
+    "no_answer": 65,
+    "k": 1,
+    "style": "boxed",
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "total_seconds": 20.2,
+    "seconds": 16.8,
+    "sequences": 500,
+    "output_tokens": 116733,
+    "output_tokens_per_s": 6945,
+    "mean_output_tokens": 233.5,
+    "hit_max_tokens": 0.09
+  },
+  "gsm8k": {
+    "accuracy": 73.31,
+    "n": 1319,
+    "no_answer": 0,
+    "k": 1,
+    "style": "boxed",
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "total_seconds": 27.5,
+    "seconds": 24.4,
+    "sequences": 1319,
+    "output_tokens": 168443,
+    "output_tokens_per_s": 6898,
+    "mean_output_tokens": 127.7,
+    "hit_max_tokens": 0.006
+  },
+  "mmlu": {
+    "accuracy": 64.0,
+    "n": 1000,
+    "model": "Qwen/Qwen3-1.7B-Base",
+    "total_seconds": 24.8
+  }
+}

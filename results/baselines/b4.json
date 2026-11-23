@@ -1,0 +1,32 @@
+{
+  "math500": {
+    "accuracy": 50.0,
+    "n": 500,
+    "no_answer": 56,
+    "k": 1,
+    "style": "boxed",
+    "model": "Qwen/Qwen3-4B-Base",
+    "total_seconds": 33.4,
+    "seconds": 29.6,
+    "sequences": 500,
+    "output_tokens": 102551,
+    "output_tokens_per_s": 3469,
+    "mean_output_tokens": 205.1,
+    "hit_max_tokens": 0.076
+  },
+  "gsm8k": {
+    "accuracy": 87.11,
+    "n": 1319,
+    "no_answer": 0,
+    "k": 1,
+    "style": "boxed",
+    "model": "Qwen/Qwen3-4B-Base",
+    "total_seconds": 55.5,
+    "seconds": 52.5,
+    "sequences": 1319,
+    "output_tokens": 162912,
+    "output_tokens_per_s": 3105,
+    "mean_output_tokens": 123.5,
+    "hit_max_tokens": 0.0
+  }
+}

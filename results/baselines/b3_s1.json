@@ -1,0 +1,114 @@
+{
+  "rehearse": {
+    "questions": 7000,
+    "kept_questions": 1444,
+    "kept_pairs": 2888,
+    "unanimous": 368,
+    "no_majority": 5188,
+    "kept_label_accuracy": 94.8,
+    "by_agreement": {
+      "0": {
+        "n": 2,
+        "majority_correct": 0
+      },
+      "1": {
+        "n": 1809,
+        "majority_correct": 72
+      },
+      "2": {
+        "n": 1713,
+        "majority_correct": 443
+      },
+      "3": {
+        "n": 1004,
+        "majority_correct": 547
+      },
+      "4": {
+        "n": 660,
+        "majority_correct": 499
+      },
+      "5": {
+        "n": 505,
+        "majority_correct": 446
+      },
+      "6": {
+        "n": 472,
+        "majority_correct": 461
+      },
+      "7": {
+        "n": 467,
+        "majority_correct": 462
+      },
+      "8": {
+        "n": 368,
+        "majority_correct": 366
+      }
+    },
+    "filter_seconds": 202.4,
+    "total_seconds": 1647.9,
+    "seed": 1,
+    "k": 8,
+    "seconds": 1445.0,
+    "sequences": 56000,
+    "output_tokens": 12017833,
+    "output_tokens_per_s": 8317,
+    "mean_output_tokens": 214.6,
+    "hit_max_tokens": 0.031
+  },
+  "train": {
+    "steps": 747,
+    "train_tokens": 2117223,
+    "epoch_tokens": 461768,
+    "examples": 2888,
+    "epochs_done": 4.59,
+    "seconds": 191.6,
+    "tokens_per_s": 11050,
+    "loss_first": NaN,
+    "loss_last": 0.1217,
+    "lr": 0.0001,
+    "batch_tokens": 3000,
+    "trainable_params": 17432576,
+    "peak_gpu_gb": 15.5,
+    "seed": 1,
+    "rank": 16,
+    "alpha": 32,
+    "data": "/workspace/runs/baselines/b3/b3_s1.kept.jsonl",
+    "total_seconds": 192.7
+  },
+  "math500": {
+    "accuracy": 35.8,
+    "n": 500,
+    "no_answer": 21,
+    "k": 1,
+    "style": "boxed",
+    "model": "/root/merged/b3_s1",
+    "total_seconds": 19.2,
+    "seconds": 14.7,
+    "sequences": 500,
+    "output_tokens": 98989,
+    "output_tokens_per_s": 6743,
+    "mean_output_tokens": 198.0,
+    "hit_max_tokens": 0.036
+  },
+  "gsm8k": {
+    "accuracy": 72.63,
+    "n": 1319,
+    "no_answer": 0,
+    "k": 1,
+    "style": "boxed",
+    "model": "/root/merged/b3_s1",
+    "total_seconds": 25.7,
+    "seconds": 22.9,
+    "sequences": 1319,
+    "output_tokens": 158264,
+    "output_tokens_per_s": 6923,
+    "mean_output_tokens": 120.0,
+    "hit_max_tokens": 0.004
+  },
+  "mmlu": {
+    "accuracy": 63.6,
+    "n": 1000,
+    "model": "/root/merged/b3_s1",
+    "total_seconds": 24.7
+  }
+}
